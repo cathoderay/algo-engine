@@ -1,2 +1,2 @@
 # algo-engine
-Engine to study algorithms
+Engine to study and visualize algorithms
