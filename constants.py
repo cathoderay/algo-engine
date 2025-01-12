@@ -1,6 +1,6 @@
 NAME = "name"
 STATE = "state"
-VALUES = "values"
+INDICES = "indices"
 SWAPS = "swaps"
 SWAP = "swap"
 COMPARISONS = "comparisons"

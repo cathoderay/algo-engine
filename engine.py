@@ -58,7 +58,7 @@ class Engine:
         self.__add_event({
             constants.NAME: name,
             constants.STATE: tuple(l),
-            constants.VALUES: (a, b),
+            constants.INDICES: (a, b),
             constants.SWAPS: self.total_swaps,
             constants.COMPARISONS: self.total_comparisons
         })
