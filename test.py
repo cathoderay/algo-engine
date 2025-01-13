@@ -71,3 +71,13 @@ class EngineTest(unittest.TestCase):
         self.assertEqual(8, len([event for event in events if event.payload["name"] == "swap"]))
         self.assertEqual(1, len([event for event in events if event.payload["name"] == "final"]))
         self.assertEqual(tuple(sorted(inp)), engine.get_last_event().payload["state"])
+
+    def test_quick_sort(self):
+        engine = Engine()
+        inp = [5, 3, 2, 1]
+        engine.quick_sort(inp)
+        self.assertEqual([1, 2, 3, 5], inp)
+        events = engine.get_events()
+        self.assertEqual(1, len([event for event in events if event.payload["name"] == "initial"]))
+        self.assertEqual(1, len([event for event in events if event.payload["name"] == "final"]))
+        self.assertEqual(tuple(sorted(inp)), engine.get_last_event().payload["state"])

@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation 
 
 
-
 class View:
     def __init__(self, name, events, width, height):
         self.name = name
