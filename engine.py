@@ -18,9 +18,11 @@
     
 """
 
-import constants
 
 from math import inf
+from random import randint
+
+import constants
 
 
 class Event:
@@ -141,6 +143,34 @@ class Engine:
         
         self.start(a)
         merge(0, len(a) - 1)
+        self.finish(a)
+
+    def quick_sort(self, a):
+        def partition(s, e):
+            p_i = randint(s, e)
+            self.add_swap(a, p_i, s)
+            a[p_i], a[s] = a[s], a[p_i]
+            p = a[s]
+            i = j = s + 1
+            for j in range(s + 1, e + 1):
+                self.add_comparison(a, j, 0)
+                if a[j] < p:
+                    self.add_swap(a, i, j)
+                    a[i], a[j] = a[j], a[i]
+                    i += 1
+            self.add_swap(a, s, i-1)
+            a[s], a[i-1] = a[i-1], a[s]
+            return i - 1
+
+        def quick(s, e):
+            if s > e: return
+
+            p = partition(s, e)
+            quick(s, p - 1)
+            quick(p + 1, e)
+
+        self.start(a)
+        quick(0, len(a) - 1)
         self.finish(a)
 
 

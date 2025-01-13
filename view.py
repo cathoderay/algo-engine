@@ -82,3 +82,9 @@ if __name__ == "__main__":
     view = View("merge sort", engine.events, width=width, height=height)
     view.print_results()
     view.animate(speed)
+
+    engine.quick_sort(inp[:])
+    events = engine.get_events()
+    view = View("quick sort", engine.events, width=width, height=height)
+    view.print_results()
+    view.animate(speed)
