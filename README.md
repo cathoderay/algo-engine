@@ -7,8 +7,8 @@ and call the algorithm you want.
 
 Below, you can see an example for the insertion sort.
   ```
-    import pprint
     from engine import Engine
+    import pprint
 
     engine = Engine()
     engine.insertion_sort([4, 2, 3, 1])
