@@ -1,6 +1,7 @@
 """
     Author: Ronald Andreu Kaiser
     Date: Jan 11th, 2025
+    Last updated: Jan 13th, 2025
 
     Description: This is an engine to study algorithms.
 
