@@ -153,7 +153,7 @@ class Engine:
             p = a[s]
             i = j = s + 1
             for j in range(s + 1, e + 1):
-                self.add_comparison(a, j, 0)
+                self.add_comparison(a, j, s)
                 if a[j] < p:
                     self.add_swap(a, i, j)
                     a[i], a[j] = a[j], a[i]
@@ -192,4 +192,7 @@ if __name__ == "__main__":
     pprint.pprint(engine.get_events())
 
     engine.merge_sort(inp[:])
+    pprint.pprint(engine.get_events())
+
+    engine.quick_sort(inp[:])
     pprint.pprint(engine.get_events())
