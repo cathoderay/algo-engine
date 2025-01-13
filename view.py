@@ -19,7 +19,7 @@ class View:
             number of comparisons: {self.events[-1].payload[constants.COMPARISONS]}
         """)
 
-    def animate(self, interval=100):
+    def animate(self, delay=100, save=False, filename='test.gif'):
         n = len(self.events)
         artists = []
         fig, ax = plt.subplots()
@@ -39,7 +39,8 @@ class View:
             container = ax.bar(list(range(n)), state, color=colors)
             artists.append(container)
         
-        ani = animation.ArtistAnimation(fig=fig, artists=artists, interval=interval, repeat=False)
+        ani = animation.ArtistAnimation(fig=fig, artists=artists, interval=delay, repeat=False)
+        if save: ani.save(filename)
         swaps = self.events[-1].payload[constants.SWAPS]
         comparisons = self.events[-1].payload[constants.COMPARISONS]
         plt.title(f"{self.name} - ( swaps: {swaps} | comparisons: {comparisons} )")
