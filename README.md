@@ -46,8 +46,7 @@ Below you can see an example on how to do that.
   engine.insertion_sort(input)
 
   view = View("insertion sort", engine.events, width=6, height=4)
-  speed = 100
-  view.animate(speed, save=True)
+  view.animate(delay=200, save=True)
  ```
   ![insertion sort animation example](https://github.com/cathoderay/algo-engine/blob/main/media/insertion_sort_example.gif)
 
