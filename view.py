@@ -53,15 +53,12 @@ if __name__ == "__main__":
     import random
     from engine import Engine
 
-    engine = Engine()
     n = 10 # use small n because matplotlib is slow
-    speed = 10
-    width = 10
-    height = 8
-    inp = [random.randint(1, 200) for _ in range(n)]
 
-    engine.quick_sort(inp[:])
+    engine = Engine()
+    engine.merge_sort([random.randint(1, 200) for _ in range(n)])
     events = engine.get_events()
-    view = View("merge sort", engine.events, width=width, height=height)
+
+    view = View("merge sort", events, width=10, height=8)
     view.print_results()
-    view.animate(speed)
+    view.animate(delay=100)
