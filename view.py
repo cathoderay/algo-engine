@@ -56,9 +56,9 @@ if __name__ == "__main__":
     n = 10 # use small n because matplotlib is slow
 
     engine = Engine()
-    engine.merge_sort([random.randint(1, 200) for _ in range(n)])
+    engine.quick_sort([random.randint(1, 200) for _ in range(n)])
     events = engine.get_events()
 
-    view = View("merge sort", events, width=10, height=8)
+    view = View("quick sort", events, width=10, height=8)
     view.print_results()
     view.animate(delay=100)

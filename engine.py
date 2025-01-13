@@ -164,7 +164,7 @@ class Engine:
             return i - 1
 
         def quick(s, e):
-            if s > e: return
+            if s >= e: return
 
             p = partition(s, e)
             quick(s, p - 1)
@@ -179,21 +179,21 @@ if __name__ == "__main__":
     # Example of usage
 
     import random
-    import pprint
+    from pprint import pprint
 
     engine = Engine()
     inp = [random.randint(0, 100) for _ in range(100)]
     engine.bubble_sort(inp[:])
-    pprint.pprint(engine.get_events())
+    pprint(engine.get_events())
 
     engine.selection_sort(inp[:])
-    pprint.pprint(engine.get_events())
+    pprint(engine.get_events())
 
     engine.insertion_sort(inp[:])
-    pprint.pprint(engine.get_events())
+    pprint(engine.get_events())
 
     engine.merge_sort(inp[:])
-    pprint.pprint(engine.get_events())
+    pprint(engine.get_events())
 
     engine.quick_sort(inp[:])
-    pprint.pprint(engine.get_events())
+    pprint(engine.get_events())
