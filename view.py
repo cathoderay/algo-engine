@@ -60,32 +60,8 @@ if __name__ == "__main__":
     height = 8
     inp = [random.randint(1, 200) for _ in range(n)]
 
-    engine.bubble_sort(inp[:])
-    events = engine.get_events()
-    view = View("bubble sort", engine.events, width=width, height=height)
-    view.print_results()
-    view.animate(speed)
-
-    engine.selection_sort(inp[:])
-    events = engine.get_events()
-    view = View("selection sort", engine.events, width=width, height=height)
-    view.print_results()
-    view.animate(speed)
-
-    engine.insertion_sort(inp[:])
-    events = engine.get_events()
-    view = View("insertion sort", engine.events, width=width, height=height)
-    view.print_results()
-    view.animate(speed)
-
-    engine.merge_sort(inp[:])
-    events = engine.get_events()
-    view = View("merge sort", engine.events, width=width, height=height)
-    view.print_results()
-    view.animate(speed)
-
     engine.quick_sort(inp[:])
     events = engine.get_events()
-    view = View("quick sort", engine.events, width=width, height=height)
+    view = View("merge sort", engine.events, width=width, height=height)
     view.print_results()
     view.animate(speed)
